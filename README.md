@@ -114,4 +114,7 @@ Auth0’nun kendi hosted login ekranı kullanılmaz, özel frontend giriş aray�
 # Branch Stratejisi
 dev/v1.0.0: Tüm geliştirmeler bu branch üzerinden yapıldı.
 
+
 prod/v1.0.0: Tamamlanan geliştirme buraya merge edilecek.
+
+
