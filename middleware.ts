@@ -6,8 +6,7 @@ import { getToken } from "next-auth/jwt";
 export async function middleware(req: NextRequest) {
   const token = await getToken({ req, secret: process.env.NEXTAUTH_SECRET });
 
-  // console.log ile kontrol edebilirsin
-  console.log("Middleware token:", token);
+
 
   const url = req.nextUrl.clone();
 
