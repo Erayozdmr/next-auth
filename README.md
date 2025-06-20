@@ -1,35 +1,59 @@
 Next.js 14 + Auth0 + NextAuth.js Authentication System
 
-Bu proje, OAuth tabanlı kimlik doğrulama sistemi ile kullanıcı girişini sağlayan ve yetkilendirme yapan bir örnek uygulamadır.
-Geliştirme süreci, SOLID prensipleri ve 12 Factor App ilkeleri dikkate alınarak yürütülmüştür.
+Bu proje, OAuth tabanlı kimlik doğrulama sistemi ile kullanıcı girişini sağlayan ve yetkilendirme yapan bir örnek uygulamadır.  
+Geliştirme süreci, SOLID prensipleri ve [12 Factor App](https://12factor.net/) ilkeleri dikkate alınarak yürütülmüştür.
 
-Teknolojiler & Araçlar
+ Teknolojiler & Araçlar
 
-Next.js 14 (App Router)
-TypeScript
-Tailwind CSS
-NextAuth.js
-Auth0 (OAuth2 Provider)
-Google OAuth
-JWT (JSON Web Tokens)
-Jest (Test Framework)
-Git / GitHub (Branching Strategy)
-Özellikler
-Auth0 ve Google ile kullanıcı girişi
-NextAuth.js ile JWT tabanlı oturum yönetimi
-middleware.ts ile korunan sayfalara erişim kontrolü
-/login yönlendirme sistemi
-Test altyapısı ve örnek testler
-12 Factor App uyumlu yapı
-SOLID prensiplerine uygun modüler kod yapısı
-TypeScript ile tam tip güvenliği
-Proje Yapısı
-next-auth/ ├── app/ │ ├── login/ │ ├── dashboard/ │ └── api/ │ └── auth/[...nextauth]/route.ts ├── components/ ├── lib/ │ └── authOptions.ts ├── middleware.ts ├── middleware.test.ts ├── types/ ├── jest.config.ts ├── jest.setup.ts ├── .babelrc ├── .env.local.example └── README.md
+- Next.js 14 (App Router)
+-  TypeScript
+-  Tailwind CSS
+-  NextAuth.js
+-  Auth0 (OAuth2 Provider)
+-  Google OAuth
+-  JWT (JSON Web Tokens)
+-  Jest (Test Framework)
+-  Git / GitHub (Branching Strategy)
 
-Ek Özellikler Kullanıcı deneyimini artırmak için, görevde belirtilmemesine rağmen e-ticaret paneli tarzında modern ve kullanıcı dostu bir yönetim paneli tasarımı ve implementasyonu yapıldı.
+# Özellikler
 
-Kurulum
-Repository’yi Klonla
+-  Auth0 ve Google ile kullanıcı girişi
+-  NextAuth.js ile JWT tabanlı oturum yönetimi
+-  `middleware.ts` ile korunan sayfalara erişim kontrolü
+-  `/login` yönlendirme sistemi
+-  Test altyapısı ve örnek testler
+-  12 Factor App uyumlu yapı
+-  SOLID prensiplerine uygun modüler kod yapısı
+-  TypeScript ile tam tip güvenliği
+
+#  Proje Yapısı
+
+next-auth/
+├── app/
+│ ├── login/
+│ ├── dashboard/
+│ └── api/
+│ └── auth/[...nextauth]/route.ts
+├── components/
+├── lib/
+│ └── authOptions.ts
+├── middleware.ts
+├── middleware.test.ts
+├── types/
+├── jest.config.ts
+├── jest.setup.ts
+├── .babelrc
+├── .env.local.example
+└── README.md
+
+Ek Özellikler
+Kullanıcı deneyimini artırmak için, görevde belirtilmemesine rağmen e-ticaret paneli tarzında modern ve kullanıcı dostu bir yönetim paneli tasarımı ve implementasyonu yapıldı.
+
+# Kurulum
+
+ 1. Repository’yi Klonla
+
+```bash
 git clone https://github.com/Erayozdmr/next-auth.git
 cd next-auth
 
