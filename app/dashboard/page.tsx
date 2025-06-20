@@ -1,5 +1,5 @@
 'use client';
-
+import React from 'react';
 import { signOut, useSession } from 'next-auth/react';
 import { motion } from 'framer-motion';
 
@@ -90,3 +90,11 @@ export default function DashboardPage() {
     </div>
   );
 }
+export function GET() {
+    throw new Error('Function not implemented.');
+}
+
+export function POST() {
+    throw new Error('Function not implemented.');
+}
+

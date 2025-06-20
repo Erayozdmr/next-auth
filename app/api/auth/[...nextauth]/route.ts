@@ -1,3 +1,5 @@
+
+import React from 'react';
 import NextAuth from "next-auth";
 import Auth0Provider from "next-auth/providers/auth0";
 import GoogleProvider from "next-auth/providers/google";
@@ -11,7 +13,7 @@ type JwtParams = {
   profile?: Profile;
   isNewUser?: boolean;
   trigger?: "signIn" | "signUp" | "update";
-  session?: any;
+  session?: Session;
 };
 
 export const authOptions = {
@@ -33,22 +35,15 @@ export const authOptions = {
     strategy: "jwt" as const,
   },
   callbacks: {
-    async jwt({ token, user, account }: JwtParams): Promise<JWT> {
-      if (account && user) {
+    async jwt({ token, account }: JwtParams): Promise<JWT> {
+      if (account) {
         token.accessToken = account.access_token;
-
-        if ("roles" in user && Array.isArray(user.roles) && user.roles.length > 0) {
-          token.role = user.roles[0];
-        } else {
-          token.role = "user";
-        }
       }
       return token;
     },
 
     async session({ session, token }: { session: Session; token: JWT }): Promise<Session> {
       session.accessToken = token.accessToken as string | undefined;
-      session.user.roles = [(token as any).role as string].filter(Boolean);
       return session;
     },
   },
